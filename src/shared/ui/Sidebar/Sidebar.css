@@ -1,0 +1,187 @@
+.sidebar {
+    width: 20vw;
+    background: #212121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sidebar-header {
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #1f232e;
+    border-bottom: 1px solid #3a3f4b;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.chat-item:hover {
+    background: #3a3f4b;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.last-message {
+    font-size: 14px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+}
+
+.tabs button {
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs button:hover {
+    border: none;
+    background-color: #2b2b2b;
+}
+
+.tabs button.active {
+    background-color: #3a3f4b;
+    border-bottom: 2px solid #8774e1;
+    color: #8774e1;
+}
+
+.tabs button:hover {
+    background-color: #3a3f4b;
+    color: white;
+}
+
+.tabs button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs button:focus {
+    outline: none;
+}
+
+.logout-container {
+    margin-top: auto;
+    padding: 10px;
+}
+
+.logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #e53935;
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+}
+
+.user-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.user-list-header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 1px solid #3a3f4b;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-item:hover {
+    background: #3a3f4b;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item.active-chat {
+    background-color: #766ac8;
+    color: white;
+}
+
+.chat-item.active-chat .user-name {
+    color: white;
+}
+
+.chat-item.active-chat .last-message {
+    color: #e0e0ff;
+}
+
+.chat-item.active-chat .timestamp {
+    color: #e0e0ff;
+}

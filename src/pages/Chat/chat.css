@@ -1,0 +1,220 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative; /* Добавляем позиционирование для абсолютного позиционирования списка чатов */
+}
+
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #303030;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    animation-fill-mode: both;
+}
+
+.chat-header {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #212121;
+    border-bottom: 1px solid black;
+    color: white;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #18181a;
+}
+
+.message {
+    max-width: 60%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.message-sent {
+    background: #766ac8;
+    color: white;
+    align-self: flex-end;
+}
+
+.message-received {
+    background: #212121;
+    color: white;
+    align-self: flex-start;
+}
+
+.timestamp {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: 1;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #303030;
+    background-color: #212121;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100vw;
+        position: absolute; /* Абсолютное позиционирование для списка чатов */
+        top: 0;
+        left: 0;
+        transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    }
+
+    .sidebar-hidden {
+        transform: translateX(-20%);
+    }
+
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .chat-content {
+        flex: 1;
+    }
+
+    .chat-box {
+        width: 100%;
+        border-left: none;
+    }
+
+    .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #212121;
+        color: white;
+    }
+
+    .chat-header button {
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 0px;
+        color: white;
+    }
+
+    .chat-header .back-button {
+        margin-left: 10px;
+    }
+
+    .chat-messages {
+        height: calc(100vh - 110px);
+        /* Вычитаем высоту хедера и инпута */
+    }
+
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #212121;
+        border-top: 1px solid #303030;
+        z-index: 10;
+    }
+
+    .chat-input button {
+        margin-right: 15px;
+    }
+
+    .slide-in-right {
+        -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @-webkit-keyframes slide-in-right {
+        0% {
+            -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-in-right {
+        0% {
+            -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .slide-out-left {
+        -webkit-animation: slide-out-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-out-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @-webkit-keyframes slide-out-left {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slide-out-left {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+            opacity: 0;
+        }
+    }
+}
